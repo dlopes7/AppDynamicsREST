@@ -58,7 +58,7 @@ from a controller on localhost, and prints them out:
 
     from appd.request import AppDynamicsClient
 
-    c = AppDynamicsClient('http://localhost:8090', 'user1', 'password', 'customer1', verbose=True)
+    c = AppDynamicsClient('http://localhost:8090', 'user1', 'password', 'customer1', debug=True)
     for app in c.get_applications():
         print app.name, app.id
 
