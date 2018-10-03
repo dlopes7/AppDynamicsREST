@@ -245,7 +245,7 @@ class AppDynamicsClient(object):
         if parent:
             params['metric-path'] = parent.path
         path = '/applications/%d/metrics' % app_id
-        nodes = MetricTreeNodes.from_json(self.request(path, params), parent)
+        nodes = MetricTreeNodes.from_json(self._top_request(MetricTreeNodes, path, params), parent)
         if recurse:
             for node in nodes:
                 if node.type == 'folder':
